@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTheme } from "@/app/providers";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +28,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-gray-950/80"
-          : "bg-transparent"
+          ? "bg-white/30 dark:bg-black/30 backdrop-blur-lg shadow-sm"
+          : "bg-white dark:bg-black"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,52 +37,63 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                DiligentInsight
-              </span>
+              <div className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                Diligent<span className="text-purple-600 dark:text-pink-500">Insight</span>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link
-              href="#features"
-              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 text-sm font-medium transition-colors"
+              href="/solutions"
+              className="text-gray-600 hover:text-purple-700 dark:text-gray-300 dark:hover:text-pink-400 text-sm font-medium transition-colors"
             >
-              Features
+              Solutions
             </Link>
             <Link
-              href="#demo"
-              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 text-sm font-medium transition-colors"
+              href="/resources"
+              className="text-gray-600 hover:text-purple-700 dark:text-gray-300 dark:hover:text-pink-400 text-sm font-medium transition-colors"
             >
-              Demo
+              Resources
             </Link>
             <Link
-              href="#testimonials"
-              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 text-sm font-medium transition-colors"
+              href="/about"
+              className="text-gray-600 hover:text-purple-700 dark:text-gray-300 dark:hover:text-pink-400 text-sm font-medium transition-colors"
             >
-              Testimonials
+              About
             </Link>
             <Link
-              href="#faq"
-              className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 text-sm font-medium transition-colors"
+              href="/platform"
+              className="text-gray-600 hover:text-purple-700 dark:text-gray-300 dark:hover:text-pink-400 text-sm font-medium transition-colors"
             >
-              FAQ
+              Platform
             </Link>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex">
-            <Button variant="gradient" size="lg" className="rounded-full font-medium">
-              Get Started
+          {/* Login & Request Access */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Link href="/login">
+              <Button variant="outline" size="sm" className="rounded-md text-sm px-4 py-1.5 h-auto border border-gray-300 dark:border-gray-700 font-medium bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-none hover:shadow-none">
+                Log in
+              </Button>
+            </Link>
+            <Link href="/request-access">
+              <Button 
+                variant="gradient" 
+                size="sm" 
+                className="rounded-md text-sm tracking-tight h-auto px-4 py-1.5 font-medium"
+              >
+                Request Access
             </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-700 dark:text-gray-300"
+              className="text-gray-600 dark:text-gray-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -124,41 +137,52 @@ export default function Navbar() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg">
             <Link
-              href="#features"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+              href="/about"
+              className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Features
+              About
             </Link>
             <Link
-              href="#demo"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+              href="/how-it-works"
+              className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Demo
+              How it works
             </Link>
             <Link
-              href="#testimonials"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+              href="/free-trial"
+              className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Testimonials
+              Free Trial
             </Link>
             <Link
-              href="#faq"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+              href="/services"
+              className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              FAQ
+              Services
             </Link>
-            <div className="pt-2">
+            <div className="pt-4 space-y-2">
+              <Link href="/login">
+                <Button 
+                  variant="outline" 
+                  className="w-full rounded-md text-sm px-4 py-1.5 h-auto border border-gray-300 dark:border-gray-700 font-medium bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-none hover:shadow-none"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Log in
+                </Button>
+              </Link>
+              <Link href="/request-access">
               <Button
                 variant="gradient"
-                className="w-full rounded-full font-medium"
+                  className="w-full rounded-md text-sm tracking-tight h-auto px-4 py-1.5 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Started
+                  Request Access
               </Button>
+              </Link>
             </div>
           </div>
         </div>

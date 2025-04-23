@@ -10,9 +10,9 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
@@ -87,6 +87,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient-x": "gradient-x 15s ease infinite",
         "float": "float 6s ease-in-out infinite",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
     },
   },

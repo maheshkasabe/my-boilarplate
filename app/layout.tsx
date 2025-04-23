@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./providers";
 
+// Configure Inter with proper weights to match beam.ai's font styling
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  weight: ["300", "400", "500", "600"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Diligent Insight | Modern Solutions for Your Business",
-  description: "Experience the next generation of intelligent solutions. Diligent Insight delivers cutting-edge technology with a beautiful, intuitive experience.",
-  keywords: ["AI", "business intelligence", "data analytics", "modern solutions"],
-  authors: [{ name: "Diligent Insight Team" }],
+  title: "Beam AI | AI Agent Templates",
+  description: "Elevate your workflow with custom AI Agents templates, complemented by dynamic tools and seamless integrations.",
+  keywords: ["AI", "AI Agents", "machine learning", "automation", "workflow"],
+  authors: [{ name: "Beam AI Team" }],
   openGraph: {
-    title: "Diligent Insight | Modern Solutions for Your Business",
-    description: "Experience the next generation of intelligent solutions.",
-    url: "https://diligent-insight.com",
-    siteName: "Diligent Insight",
+    title: "Beam AI | AI Agent Templates",
+    description: "Elevate your workflow with custom AI Agents templates.",
+    url: "https://beam.ai",
+    siteName: "Beam AI",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diligent Insight | Modern Solutions for Your Business",
-    description: "Experience the next generation of intelligent solutions.",
+    title: "Beam AI | AI Agent Templates",
+    description: "Elevate your workflow with custom AI Agents templates.",
   },
 };
 
@@ -34,9 +38,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
-        {children}
+    <html lang="en" className={`${inter.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
