@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <div className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Diligent<span className="text-blue-600">Insight</span>
+                Diligent<span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Insight</span>
               </div>
             </Link>
           </div>

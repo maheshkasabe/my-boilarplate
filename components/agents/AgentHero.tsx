@@ -13,13 +13,13 @@ export default function AgentHero() {
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
           Save time, reduce costs, and gain deeper insights into businesses with Diligent Insight, the next-generation platform for automated due diligence across investments, partnerships, and corporate transactions.
         </p>
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <a href="#try-free" className="inline-block">
             <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 animate-button-shine hover:animate-button-shine">
               Try Free Trial
             </button>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

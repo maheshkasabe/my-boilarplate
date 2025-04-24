@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <div className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Diligent<span className="text-purple-600 dark:text-pink-500">Insight</span>
+                Diligent<span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Insight</span>
               </div>
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
             </Link>
             <Link href="/request-access">
               <Button 
-                variant="gradient" 
+                variant="pink-gradient" 
                 size="sm" 
                 className="rounded-md text-sm tracking-tight h-auto px-4 py-1.5 font-medium"
               >
@@ -176,7 +176,7 @@ export default function Navbar() {
               </Link>
               <Link href="/request-access">
               <Button
-                variant="gradient"
+                variant="pink-gradient"
                   className="w-full rounded-md text-sm tracking-tight h-auto px-4 py-1.5 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

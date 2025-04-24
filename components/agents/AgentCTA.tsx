@@ -16,7 +16,7 @@ export default function AgentCTA() {
           </div>
           
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-gray-900 dark:text-white mb-6 max-w-4xl">
-            Make smarter, quicker, and more<br className="hidden md:block" /> cost-effective corporate decisions
+            Make smarter, quicker, <br className="hidden md:block" /> and more cost-effective corporate decisions
           </h2>
           
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12 leading-relaxed font-light">

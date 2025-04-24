@@ -23,6 +23,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         login: "bg-white text-primary shadow-sm hover:bg-accent/90 border border-muted",
         gradient: "text-white font-light transition-all duration-300 bg-gradient-to-r from-[#0077FF] to-[#00B7FF] hover:from-[#0066CC] hover:to-[#009FE3] rounded-xl shadow-md hover:shadow-lg",
+        "pink-gradient": "text-white font-light transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-xl shadow-md hover:shadow-lg",
       },
       size: {
         default: "h-9 px-4 py-2",

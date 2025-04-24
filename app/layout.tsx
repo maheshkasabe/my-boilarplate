@@ -13,21 +13,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Beam AI | AI Agent Templates",
+  title: "Diligent Insight",
   description: "Elevate your workflow with custom AI Agents templates, complemented by dynamic tools and seamless integrations.",
   keywords: ["AI", "AI Agents", "machine learning", "automation", "workflow"],
   authors: [{ name: "Beam AI Team" }],
   openGraph: {
-    title: "Beam AI | AI Agent Templates",
-    description: "Elevate your workflow with custom AI Agents templates.",
+    title: "Diligent Insight",
+    description: "",
     url: "https://beam.ai",
-    siteName: "Beam AI",
+    siteName: "Diligent Insight",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beam AI | AI Agent Templates",
+    title: "Diligent Insight",
     description: "Elevate your workflow with custom AI Agents templates.",
   },
 };

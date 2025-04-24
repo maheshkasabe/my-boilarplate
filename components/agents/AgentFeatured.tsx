@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTheme } from "@/app/providers";
@@ -12,36 +11,26 @@ export default function AgentFeatured() {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showLeftFade, setShowLeftFade] = useState(false);
+  const [showRightFade, setShowRightFade] = useState(true);
   const { theme } = useTheme();
 
   const handleScroll = (direction: 'left' | 'right') => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
-    // Use a more precise scroll amount calculation
+    // Use a smoother scroll amount calculation
     const scrollAmount = direction === 'left' 
-      ? -container.clientWidth * 0.65  // Reduced for smoother movement
-      : container.clientWidth * 0.65;
+      ? -container.clientWidth * 0.55  // Reduced for smoother movement
+      : container.clientWidth * 0.55;
     
     container.scrollBy({
       left: scrollAmount,
       behavior: 'smooth'
     });
-    
-    // Add subtle animation to cards
-    const cards = container.querySelectorAll('.card-animate');
-    cards.forEach((card, index) => {
-      const delay = index * 50; // Staggered delay
-      setTimeout(() => {
-        // Add a temporary class for animation
-        card.classList.add('animate-slide');
-        // Remove the class after animation completes
-        setTimeout(() => card.classList.remove('animate-slide'), 500);
-      }, delay);
-    });
   };
 
-  // Enable smooth scrolling with debounce to ensure smoother animation
+  // Improved smooth scrolling
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     
@@ -49,19 +38,20 @@ export default function AgentFeatured() {
       const container = scrollContainerRef.current;
       if (!container) return;
       
-      // Find the nearest snap point
+      // Smoother snap behavior
       const itemWidth = container.querySelector('.flex-none')?.clientWidth || 0;
       const scrollLeft = container.scrollLeft;
       const nearestIndex = Math.round(scrollLeft / itemWidth);
       
-      // Smooth scroll to the nearest snap point
+      // Only apply gentle snap when user stops scrolling
       clearTimeout(timeout);
       timeout = setTimeout(() => {
+        // Use a gentler snap with a slower animation
         container.scrollTo({
           left: nearestIndex * itemWidth,
           behavior: 'smooth'
         });
-      }, 150); // Small delay for smoother feel
+      }, 200); // Longer delay for smoother feel
     };
     
     const container = scrollContainerRef.current;
@@ -86,15 +76,18 @@ export default function AgentFeatured() {
     const currentProgress = (container.scrollLeft / scrollableWidth) * 100;
     setScrollProgress(currentProgress);
     
-    // Check if scrolled to the beginning
-    setShowLeftArrow(container.scrollLeft > 20);
+    // Check if scrolled from the beginning (more than 20px)
+    const isScrolledFromStart = container.scrollLeft > 20;
+    setShowLeftArrow(isScrolledFromStart);
+    setShowLeftFade(isScrolledFromStart);
     
-    // Check if scrolled to the end
+    // Check if scrolled to near the end (less than 20px from end)
     const isAtEnd = Math.abs(
       container.scrollWidth - container.clientWidth - container.scrollLeft
     ) < 20;
     
     setShowRightArrow(!isAtEnd);
+    setShowRightFade(!isAtEnd);
   };
 
   // Enable keyboard navigation
@@ -111,186 +104,198 @@ export default function AgentFeatured() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const getCardBackground = (id: number) => {
+    const colors = [
+      // Darker yellow-green waves - Customer Service
+      "bg-gradient-to-br from-teal-800 via-green-800 to-yellow-800",
+      // Darker blue-purple waves - Financial Services
+      "bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900",
+      // Darker purple-pink waves - General Problem Solvers
+      "bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900",
+    ];
+    
+    return colors[(id - 1) % colors.length];
+  };
+
   const agentData = [
     {
       id: 1,
-      category: "AUTOMATED DUE DILIGENCE",
-      title: "Company Background Reports",
+      category: "Company Background Reports",
+      title: "",
       workflows: [
-        "Regulatory Filings Analysis",
-        "Financial Reports Assessment",
-        "Market Position Overview",
-        "Corporate Structure Review"
-      ],
-      image: "/images/agent-card-1.jpg"
+        "Financial Statements Analysis",
+        "Market Position Analysis",
+        "Corporate History & Key Events"
+      ]
     },
     {
       id: 2,
-      category: "DATA EXTRACTION",
-      title: "Financial Health Assessment",
+      category: "Financial Health Assessment",
+      title: "",
       workflows: [
-        "Financial Data Extraction",
+        "Financial Health Assessment",
         "Investment Risk Analysis",
-        "Peer Group Comparison",
-        "Growth Trend Identification"
-      ],
-      image: "/images/agent-card-2.jpg"
+        "Growth Potential Identification"
+      ]
     },
     {
       id: 3,
-      category: "BUSINESS ANALYSIS",
-      title: "Corporate Intelligence Reports",
+      category: "Corporate Intelligence Reports",
+      title: "",
       workflows: [
-        "Business Credibility Analysis",
+        "Business Model Analysis",
         "Partnership Evaluation",
-        "M&A Target Assessment",
-        "Supply Chain Validation"
-      ],
-      image: "/images/agent-card-3.jpg"
+        "M&A Target Assessment"
+      ]
     },
     {
       id: 4,
-      category: "INVESTMENT INSIGHTS",
-      title: "Investment Decision Support",
+      category: "Investment Decision Support",
+      title: "",
       workflows: [
-        "Comprehensive Portfolio Analysis",
+        "Comprehensive Investment Analysis",
         "Risk Factor Identification",
-        "Market Opportunity Assessment",
-        "Investment Timeline Planning" 
-      ],
-      image: "/images/agent-card-1.jpg"
+        "Investment Opportunity Analysis"
+      ]
     },
     {
       id: 5,
-      category: "COMPLIANCE",
-      title: "Regulatory Compliance Checker",
+      category: "Regulatory Compliance Checker",
+      title: "",
       workflows: [
         "Compliance Documentation",
         "Regulatory Requirement Scanning",
-        "Compliance Risk Assessment",
-        "Governance Analysis"
-      ],
-      image: "/images/agent-card-2.jpg"
+        "Compliance Risk Assessment"
+      ]
     },
     {
       id: 6,
-      category: "STRATEGIC ANALYSIS",
-      title: "Corporate Strategy Assessment",
+      category: "Corporate Strategy Assessment",
+      title: "",
       workflows: [
         "Strategic Direction Analysis",
         "Competitive Landscape Mapping",
-        "Market Position Validation",
-        "Growth Potential Assessment"
-      ],
-      image: "/images/agent-card-3.jpg"
+        "Market Position Assessment"
+      ]
     }
   ];
 
   return (
-    <section className="pt-20 pb-36 md:pt-24 md:pb-40">
+    <section className="pt-20 pb-36 md:pt-24 md:pb-40 bg-white dark:bg-[#0c0c0c]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-5">
-          <span className="inline-block bg-secondary text-primary px-4 py-1.5 text-xs font-medium tracking-wide uppercase rounded">
-            SERVICES
-          </span>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-5">
+            <span className="inline-block bg-black/5 dark:bg-white/10 text-black/70 dark:text-white/70 px-4 py-1.5 text-xs font-medium tracking-wide uppercase rounded">
+              Services
+            </span>
+          </div>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 tracking-tight leading-tight text-foreground">
-          AI-driven <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Due Diligence</span>
-        </h2>
-        <p className="text-base md:text-lg text-muted-foreground max-w-4xl mb-16 font-light leading-relaxed">
-          From investment evaluation to corporate intelligence, our automated platform excels at streamlining due diligence processes.
-          Save time, reduce costs, and gain deeper insights into businesses with comprehensive reports for informed decision-making.
-        </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 tracking-tight leading-tight text-gray-900 dark:text-white">
+            AI-driven <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Due Diligence</span>
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-4xl mb-16 font-light leading-relaxed">
+          From investment evaluation to corporate intelligence, our automated platform excels at streamlining due diligence processes. Save time, reduce costs, and gain deeper insights into businesses with comprehensive reports for informed decision-making.
+          </p>
 
-        <div className="relative bg-secondary/70 dark:bg-secondary/20 backdrop-blur-sm rounded-xl p-5 border border-border shadow-xl">
-          <div 
-            ref={scrollContainerRef}
-            className="flex overflow-x-auto gap-5 pb-6 hide-scrollbar snap-x snap-mandatory scroll-pl-5"
-            onScroll={checkScrollPosition}
-          >
-            {agentData.map((agent) => (
-              <div key={agent.id} className="flex-none w-[85%] md:w-[45%] lg:w-[30%] snap-start" style={{ scrollSnapAlign: 'start' }}>
-                <div className="bg-card/90 dark:bg-card/90 backdrop-filter backdrop-blur-sm rounded-xl overflow-hidden h-full border border-border transition duration-300 card-animate shadow-lg">
-                  <div className="h-52 flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0">
-                      <Image 
-                        src={agent.image}
-                        alt={`${agent.title} background`}
-                        width={400}
-                        height={240}
-                        className="w-full h-full object-cover"
-                      />
+          <div className="relative bg-[#e0e0e0] dark:bg-[#111111] rounded-2xl p-6 shadow-md overflow-hidden dark:border dark:border-white/10 dark:backdrop-blur-sm">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto overflow-y-hidden gap-5  hide-scrollbar"
+              onScroll={checkScrollPosition}
+            >
+              {agentData.map((agent) => (
+                <div 
+                  key={agent.id} 
+                  className="flex-none snap-start" 
+                  style={{ 
+                    width: 'calc(100% / 3.5)', 
+                    scrollSnapAlign: 'start' 
+                  }}
+                >
+                  <div className="rounded-xl overflow-hidden h-[500px] bg-black transition duration-300 shadow-md flex flex-col dark:border dark:border-white/5">
+                    {/* Colorful wave pattern */}
+                    <div className="h-[220px] relative overflow-hidden">
+                      <div className={`absolute inset-0 ${getCardBackground(agent.id)}`}>
+                        <div className="absolute top-0 left-0 w-full h-full">
+                          {/* Curved abstract shapes */}
+                          <div className="absolute top-[10%] left-[10%] w-[90%] h-[90%] rounded-full bg-white/10 blur-3xl transform rotate-12"></div>
+                          <div className="absolute top-[20%] right-[15%] w-[80%] h-[60%] rounded-full bg-white/10 blur-2xl transform -rotate-6"></div>
+                          <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full bg-white/15 blur-2xl"></div>
+                          
+                          {/* Dark overlay for deeper shading */}
+                          <div className="absolute inset-0 bg-black/40"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Category badge */}
+                      <div className="absolute top-6 left-6 z-10">
+                        <div className="bg-black/50 backdrop-blur-md text-white text-xs px-3 py-1 rounded">
+                          {agent.category}
+                        </div>
+                      </div>
+
+                      {/* Blur effect at the boundary */}
+                      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black to-transparent backdrop-blur-sm"></div>
                     </div>
-                    <div className="absolute top-4 left-4 bg-primary/80 dark:bg-primary/80 backdrop-blur-md text-primary-foreground dark:text-primary-foreground text-xs px-3 py-1 rounded-sm">
-                      {agent.category}
-                    </div>
-                  </div>
 
-                  <div className="p-4">
-                    <h3 className="text-xl font-medium mb-1 tracking-tight text-foreground">
-                      {agent.title}
-                    </h3>
-                    
-                    <div className="mt-3 mb-2">
-                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">CAPABILITIES</span>
+                    <div className="p-6 flex-grow flex flex-col">
+                      <div className="text-gray-500 uppercase text-xs tracking-wider font-medium mb-4">
+                        WORKFLOWS
+                      </div>
+                      <div className="space-y-3 flex-grow">
+                        {agent.workflows.map((workflow, index) => (
+                          <div 
+                            key={index} 
+                            className="bg-[#0d0d0d] hover:bg-[#1a1a1a] transition-colors duration-200 py-3 px-4 rounded-lg text-gray-300 text-xs dark:border dark:border-white/5"
+                          >
+                            {workflow}
+                          </div>
+                        ))}
+                        {agent.workflows.length === 3 && (
+                          <div className="invisible bg-[#0d0d0d] py-3 px-4 rounded-lg text-gray-300 text-xs">
+                            Placeholder
+                          </div>
+                        )}
+                      </div>
                     </div>
-
-                    <ul className="space-y-0">
-                      {agent.workflows.map((workflow, index) => (
-                        <li 
-                          key={index} 
-                          className="text-sm text-muted-foreground border-t border-border py-2 transition-colors duration-200 hover:text-foreground px-1 cursor-pointer"
-                        >
-                          {workflow}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
+              ))}
+            </div>
+            
+            {/* Edge fading effects */}
+            {showLeftFade && (
+              <div className="absolute top-6 bottom-6 left-6 w-24 bg-gradient-to-r from-[#e0e0e0] dark:from-[#111111] to-transparent pointer-events-none z-20"></div>
+            )}
+            {showRightFade && (
+              <div className="absolute top-6 bottom-6 right-6 w-24 bg-gradient-to-l from-[#e0e0e0] dark:from-[#111111] to-transparent pointer-events-none z-20"></div>
+            )}
+            
+            {/* Navigation Arrows */}
+            {showLeftArrow && (
+              <div className="absolute top-1/2 left-2 transform -translate-y-1/2 hidden md:block z-20">
+                <button 
+                  className="w-10 h-10 rounded-full bg-white/90 dark:bg-black/60 text-gray-800 dark:text-white flex items-center justify-center shadow-md transition duration-300 hover:bg-white dark:hover:bg-black focus:outline-none border border-gray-200 dark:border-white/10"
+                  onClick={() => handleScroll('left')}
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft size={20} />
+                </button>
               </div>
-            ))}
+            )}
+            
+            {showRightArrow && (
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 hidden md:block z-20">
+                <button 
+                  className="w-10 h-10 rounded-full bg-white/90 dark:bg-black/60 text-gray-800 dark:text-white flex items-center justify-center shadow-md transition duration-300 hover:bg-white dark:hover:bg-black focus:outline-none border border-gray-200 dark:border-white/10"
+                  onClick={() => handleScroll('right')}
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            )}
           </div>
-          
-          {/* Edge fading effect */}
-          <div className="absolute top-5 bottom-6 left-5 w-12 bg-gradient-to-r from-secondary/90 dark:from-secondary/90 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute top-5 bottom-6 right-5 w-12 bg-gradient-to-l from-secondary/90 dark:from-secondary/90 to-transparent pointer-events-none z-10"></div>
-          
-          {/* Scroll Progress Bar */}
-          <div className="w-full h-0.5 bg-muted dark:bg-muted rounded-full mt-4 mb-2 overflow-hidden relative">
-            <div 
-              ref={progressBarRef}
-              className="absolute h-full bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400 rounded-full transition-all duration-200 ease-out scroll-progress"
-              style={{ 
-                width: '20%', 
-                left: `${Math.min(scrollProgress, 80)}%` 
-              }}
-            ></div>
-          </div>
-          
-          {showLeftArrow && (
-            <div className="absolute top-1/2 left-0 -ml-4 transform -translate-y-1/2 hidden md:block z-10">
-              <button 
-                className="w-10 h-10 rounded-full bg-card/40 dark:bg-card/40 text-foreground dark:text-foreground flex items-center justify-center shadow-xl backdrop-blur-lg transition duration-300 hover:bg-card/60 dark:hover:bg-card/60 focus:outline-none border border-border"
-                onClick={() => handleScroll('left')}
-                aria-label="Scroll left"
-              >
-                <ChevronLeft size={20} />
-              </button>
-            </div>
-          )}
-          
-          {showRightArrow && (
-            <div className="absolute top-1/2 right-0 -mr-4 transform -translate-y-1/2 hidden md:block z-10">
-              <button 
-                className="w-10 h-10 rounded-full bg-card/40 dark:bg-card/40 text-foreground dark:text-foreground flex items-center justify-center shadow-xl backdrop-blur-lg transition duration-300 hover:bg-card/60 dark:hover:bg-card/60 focus:outline-none border border-border"
-                onClick={() => handleScroll('right')}
-                aria-label="Scroll right"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </section>
