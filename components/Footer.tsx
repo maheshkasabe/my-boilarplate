@@ -71,7 +71,7 @@ export default function Footer() {
             
             {/* Social Media */}
             <div className="flex items-center space-x-4">
-              <Link href="#" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/company/diligent-insight" aria-label="LinkedIn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
@@ -116,9 +116,9 @@ export default function Footer() {
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">About</h4>
               <ul className="space-y-2.5">
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Story</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Vision</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Technology</Link></li>
+                <li><Link href="/about#our-story" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Story</Link></li>
+                <li><Link href="/about#our-story" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Vision</Link></li>
+                <li><Link href="/platform/technology" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Technology</Link></li>
                 <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Agent Quorum</Link></li>
               </ul>
             </div>
@@ -134,7 +134,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Resources</h4>
               <ul className="space-y-2.5">
                 <li>
@@ -150,22 +150,24 @@ export default function Footer() {
                 <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Case Studies</Link></li>
                 <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Documentation</Link></li>
               </ul>
-            </div>
+            </div> */}
 
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Contact</h4>
               <ul className="space-y-2.5">
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Request Demo</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Contact Support</Link></li>
+                <li><Link href="/request-access" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Request Demo</Link></li>
+                <li><Link href="/about#contact" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Contact Support</Link></li>
               </ul>
-              
-              <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4 mt-8">Legal</h4>
-              <ul className="space-y-2.5">
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Terms & Conditions</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Privacy Policy</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Accessibility</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">ESG Policy</Link></li>
-              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Legal</h4>
+               <ul className="space-y-2.5">
+                <li><Link href="/legal/terms" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Terms & Conditions</Link></li>
+                <li><Link href="/legal/privacy" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Privacy Policy</Link></li>
+                <li><Link href="/legal/accessibility" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Accessibility</Link></li>
+                <li><Link href="/legal/esg" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">ESG Policy</Link></li>
+               </ul>
             </div>
           </div>
 

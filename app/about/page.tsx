@@ -50,8 +50,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p>
-                    Founded in 2018, Diligent Insight was born from a simple observation: compliance and risk management were stuck in the past, relying on outdated tools and manual processes.
-                  </p>
+                  Founded by entrepreneurs passionate about transforming the investment process, Diligent Insight was born from a desire to simplify and enhance due diligence.  We set out to create a platform that not only saves time but also delivers deeper, more accurate insights for smarter corporate and investment decisions.                  </p>
                   <p>
                     Our founders, with decades of experience in regulatory compliance and technology, set out to build a platform that would bring compliance into the modern era using artificial intelligence, automation, and intuitive design.
                   </p>
@@ -118,7 +117,7 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">Sarah Mitchell</h3>
+                <h3 className="text-xl font-semibold mb-1">Nigel Douglas</h3>
                 <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">Chief Executive Officer</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Former compliance executive with 20+ years of experience in financial services and regulatory technology.
@@ -132,10 +131,10 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">David Chen</h3>
+                <h3 className="text-xl font-semibold mb-1">Nicholas Thomas</h3>
                 <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">Chief Technology Officer</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  AI and machine learning expert who previously led engineering teams at leading tech companies.
+                Former compliance executive with 20+ years of experience in financial services and regulatory technology.
                 </p>
               </div>
             </div>
@@ -146,10 +145,10 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">Emma Richardson</h3>
-                <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">Chief Product Officer</p>
+                <h3 className="text-xl font-semibold mb-1">Mahesh Kasbe</h3>
+                <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">AI Engineer</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Product innovator with extensive experience designing solutions for complex regulatory challenges.
+                Former compliance executive with 20+ years of experience in financial services and regulatory technology.
                 </p>
               </div>
             </div>
@@ -160,10 +159,10 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">Michael Thompson</h3>
-                <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">Chief Revenue Officer</p>
+                <h3 className="text-xl font-semibold mb-1">Rakesh Reddy</h3>
+                <p className="text-sm text-purple-600 dark:text-purple-400 mb-3">Full Stack Developer</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Growth strategist who has scaled multiple SaaS businesses from startup to market leader.
+                Former compliance executive with 20+ years of experience in financial services and regulatory technology.
                 </p>
               </div>
             </div>
@@ -217,8 +216,8 @@ export default function AboutPage() {
                     <div>
                       <h3 className="font-medium mb-1">Office</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        125 Princes Street<br />
-                        Edinburgh, EH2 4AD<br />
+                        Musselburgh<br />
+                        Edinburgh, EH21 8QD<br />
                         United Kingdom
                       </p>
                     </div>
