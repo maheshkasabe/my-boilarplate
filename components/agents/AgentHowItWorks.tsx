@@ -56,7 +56,7 @@ export default function AgentHowItWorks() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden" ref={sectionRef}>
+    <section id="how-it-works" className="py-24 relative overflow-hidden" ref={sectionRef}>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/10 to-transparent dark:from-transparent dark:via-purple-950/5 dark:to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

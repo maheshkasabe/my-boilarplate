@@ -50,6 +50,13 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Brand colors
+        brand: {
+          magenta: "#C429E4", // Magenta C429E4 (196, 41, 228)
+          silver: "#CED4D4",  // Silver CED4D4 (206, 212, 212)
+          lavender: "#E6D0F2", // Light purple E6D0F2
+          indigo: "#7630FF",   // Indigo 7630FF (118, 48, 255)
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,6 +97,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        aharoni: ["Aharoni", "Arial", "sans-serif"],
       },
     },
   },
