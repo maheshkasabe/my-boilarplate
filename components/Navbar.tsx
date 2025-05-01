@@ -36,6 +36,7 @@ export default function Navbar() {
         { name: "Technology", path: "/platform/technology" },
         { name: "Integrations", path: "/platform/integrations" },
         { name: "Security", path: "/platform/security" },
+        { name: "AgentQuorum", path: "/platform/agentquorum" },
         { name: "Pricing", path: "/platform/pricing" },
       ],
       image: "/images/platform-nav.jpg",
@@ -127,7 +128,7 @@ export default function Navbar() {
                 <Link
                   href={item.path}
                   className={`text-gray-600 hover:text-brand-magenta dark:text-gray-300 dark:hover:text-brand-indigo text-sm font-medium font-aharoni transition-colors py-2 px-3 rounded-md ${
-                    activeDropdown === index ? "bg-gray-100 dark:bg-gray-800/50 text-brand-magenta dark:text-brand-indigo" : ""
+                    activeDropdown === index ? "bg-gray-800/50 dark:bg-gray-100 text-brand-indigo dark:text-brand-magenta" : ""
                   }`}
                 >
                   {item.name}
@@ -135,7 +136,7 @@ export default function Navbar() {
                 
                 {/* Hover Card */}
                 <div 
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[90vw] bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-in-out z-50 transform ${
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[90vw] bg-gray-900 dark:bg-white rounded-xl shadow-xl border border-gray-700 dark:border-gray-200 overflow-hidden transition-all duration-300 ease-in-out z-50 transform ${
                     activeDropdown === index 
                       ? "opacity-100 translate-y-0 scale-100" 
                       : "opacity-0 translate-y-1 scale-95 pointer-events-none"
@@ -143,21 +144,21 @@ export default function Navbar() {
                 >
                   <div className="flex flex-col md:flex-row">
                     {/* Left Section: Visual Block */}
-                    <div className="w-full md:w-2/5 relative bg-gradient-to-br from-brand-magenta/20 to-brand-indigo/20 dark:from-brand-magenta/30 dark:to-brand-indigo/30 p-6">
+                    <div className="w-full md:w-2/5 relative bg-gradient-to-br from-brand-magenta/30 to-brand-indigo/30 dark:from-brand-magenta/20 dark:to-brand-indigo/20 p-6">
                       <div className="relative h-full flex flex-col justify-between">
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-aharoni">
+                          <h3 className="text-lg font-semibold text-white dark:text-gray-900 font-aharoni">
                             {item.title}
                           </h3>
-                          <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                          <p className="mt-1 text-sm text-gray-300 dark:text-gray-600">
                             {item.description}
                           </p>
                         </div>
                         
                         {/* Visual element - could be an image or decorative element */}
-                        <div className="mt-4 h-32 w-full rounded-lg bg-gradient-to-r from-brand-magenta/20 to-brand-indigo/20 dark:from-brand-magenta/30 dark:to-brand-indigo/30 backdrop-blur flex items-center justify-center">
-                          <div className="px-4 py-2 bg-white/20 dark:bg-black/20 backdrop-blur-sm rounded-md">
-                            <span className="text-lg font-medium text-gray-800 dark:text-white font-aharoni">
+                        <div className="mt-4 h-32 w-full rounded-lg bg-gradient-to-r from-brand-magenta/30 to-brand-indigo/30 dark:from-brand-magenta/20 dark:to-brand-indigo/20 backdrop-blur flex items-center justify-center">
+                          <div className="px-4 py-2 bg-black/20 dark:bg-white/20 backdrop-blur-sm rounded-md">
+                            <span className="text-lg font-medium text-white dark:text-gray-800 font-aharoni">
                               {item.name}
                             </span>
                           </div>
@@ -166,7 +167,7 @@ export default function Navbar() {
                     </div>
                     
                     {/* Right Section: Navigation Block */}
-                    <div className="w-full md:w-3/5 p-6 bg-white dark:bg-gray-900">
+                    <div className="w-full md:w-3/5 p-6 bg-gray-900 dark:bg-white">
                       <div className="grid grid-cols-2 gap-4">
                         {item.submenu.map((subitem, subindex) => (
                           <Link
@@ -174,11 +175,11 @@ export default function Navbar() {
                             href={subitem.path}
                             className="group"
                           >
-                            <div className="p-3 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
-                              <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-brand-magenta dark:group-hover:text-brand-indigo transition-colors font-aharoni">
+                            <div className="p-3 rounded-lg transition-colors hover:bg-gray-800 dark:hover:bg-gray-100">
+                              <span className="text-sm font-medium text-gray-100 dark:text-gray-900 group-hover:text-brand-indigo dark:group-hover:text-brand-magenta transition-colors font-aharoni">
                                 {subitem.name}
                               </span>
-                              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                              <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
                                 Explore {subitem.name.toLowerCase()} features and capabilities
                               </p>
                             </div>
@@ -187,10 +188,10 @@ export default function Navbar() {
                       </div>
                       
                       {/* View all link */}
-                      <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+                      <div className="mt-4 pt-3 border-t border-gray-700 dark:border-gray-200">
                         <Link
                           href={item.path}
-                          className="text-sm font-medium text-brand-magenta dark:text-brand-indigo hover:text-brand-magenta/80 dark:hover:text-brand-indigo/80 flex items-center font-aharoni"
+                          className="text-sm font-medium text-brand-indigo dark:text-brand-magenta hover:text-brand-indigo/80 dark:hover:text-brand-magenta/80 flex items-center font-aharoni"
                         >
                           View all {item.name}
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -269,22 +270,22 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 dark:bg-white shadow-lg">
             {navItems.map((item, index) => (
               <div key={index} className="py-2">
                 <Link
                   href={item.path}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-magenta dark:text-gray-300 dark:hover:text-brand-indigo rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-aharoni"
+                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-magenta dark:text-gray-300 dark:hover:text-brand-indigo rounded-md hover:bg-gray-800 dark:hover:bg-gray-100 font-aharoni"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
-                <div className="mt-1 space-y-1 pl-6 border-l-2 border-gray-200 dark:border-gray-700 ml-3">
+                <div className="mt-1 space-y-1 pl-6 border-l-2 border-gray-700 dark:border-gray-200 ml-3">
                   {item.submenu.map((subitem, subindex) => (
                     <Link
                       key={subindex}
                       href={subitem.path}
-                      className="block px-3 py-1.5 text-sm font-medium text-gray-500 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded font-aharoni"
+                      className="block px-3 py-1.5 text-sm font-medium text-gray-500 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo hover:bg-gray-800/50 dark:hover:bg-gray-50 rounded font-aharoni"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {subitem.name}

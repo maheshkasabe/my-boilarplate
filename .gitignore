@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/todos
+/todos/todo.todos
 
 # next.js
 /.next/

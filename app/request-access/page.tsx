@@ -1,9 +1,108 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function RequestAccessPage() {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    company: "",
+    job_title: "",
+    company_size: "",
+    interests: [] as string[],
+    message: ""
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = e.target;
+    
+    if (checked) {
+      setFormData(prev => ({
+        ...prev,
+        interests: [...prev.interests, value]
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        interests: prev.interests.filter(item => item !== value)
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.first_name || !formData.last_name || !formData.email || !formData.company) {
+      setSubmitStatus({
+        success: false,
+        message: "Please fill out all required fields."
+      });
+      return;
+    }
+    
+    try {
+      setIsSubmitting(true);
+      
+      const response = await fetch('/api/request-access', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setSubmitStatus({
+          success: true,
+          message: "Your access request has been submitted. We'll be in touch soon!"
+        });
+        
+        // Reset form
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          company: "",
+          job_title: "",
+          company_size: "",
+          interests: [],
+          message: ""
+        });
+      } else {
+        setSubmitStatus({
+          success: false,
+          message: data.message || "Something went wrong. Please try again later."
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        success: false,
+        message: "Failed to submit your request. Please try again later."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
       <Navbar />
@@ -21,30 +120,42 @@ export default function RequestAccessPage() {
                   </p>
                 </div>
                 
-                <form className="space-y-6">
+                {submitStatus && (
+                  <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200' : 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-200'}`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+                
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* Name Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        First Name
+                        First Name <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="text"
                         id="first_name"
                         name="first_name"
                         placeholder="John"
+                        value={formData.first_name}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       />
                     </div>
                     <div>
                       <label htmlFor="last_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Last Name
+                        Last Name <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="text"
                         id="last_name"
                         name="last_name"
                         placeholder="Doe"
+                        value={formData.last_name}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       />
                     </div>
@@ -54,25 +165,31 @@ export default function RequestAccessPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Work Email
+                        Work Email <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Company
+                        Company <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="text"
                         id="company"
                         name="company"
                         placeholder="Acme Inc."
+                        value={formData.company}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       />
                     </div>
@@ -89,6 +206,8 @@ export default function RequestAccessPage() {
                         id="job_title"
                         name="job_title"
                         placeholder="Compliance Officer"
+                        value={formData.job_title}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       />
                     </div>
@@ -99,9 +218,11 @@ export default function RequestAccessPage() {
                       <select
                         id="company_size"
                         name="company_size"
+                        value={formData.company_size}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                       >
-                        <option value="" disabled selected>Select company size</option>
+                        <option value="">Select company size</option>
                         <option value="1-10">1-10 employees</option>
                         <option value="11-50">11-50 employees</option>
                         <option value="51-200">51-200 employees</option>
@@ -124,6 +245,8 @@ export default function RequestAccessPage() {
                           name="interests"
                           type="checkbox"
                           value="due_diligence"
+                          checked={formData.interests.includes('due_diligence')}
+                          onChange={handleCheckboxChange}
                           className="w-4 h-4 text-purple-600 bg-white border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                         />
                         <label htmlFor="due_diligence" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
@@ -136,6 +259,8 @@ export default function RequestAccessPage() {
                           name="interests"
                           type="checkbox"
                           value="financial_risk"
+                          checked={formData.interests.includes('financial_risk')}
+                          onChange={handleCheckboxChange}
                           className="w-4 h-4 text-purple-600 bg-white border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                         />
                         <label htmlFor="financial_risk" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
@@ -148,6 +273,8 @@ export default function RequestAccessPage() {
                           name="interests"
                           type="checkbox"
                           value="compliance"
+                          checked={formData.interests.includes('compliance')}
+                          onChange={handleCheckboxChange}
                           className="w-4 h-4 text-purple-600 bg-white border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                         />
                         <label htmlFor="compliance" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
@@ -160,6 +287,8 @@ export default function RequestAccessPage() {
                           name="interests"
                           type="checkbox"
                           value="not_sure"
+                          checked={formData.interests.includes('not_sure')}
+                          onChange={handleCheckboxChange}
                           className="w-4 h-4 text-purple-600 bg-white border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                         />
                         <label htmlFor="not_sure" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
@@ -179,22 +308,30 @@ export default function RequestAccessPage() {
                       name="message"
                       rows={4}
                       placeholder="Tell us more about your compliance needs..."
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent"
                     ></textarea>
                   </div>
                   
                   {/* Submit Button */}
-                  <Button className="w-full" variant="pink-gradient" size="lg">
-                    Submit Request
+                  <Button 
+                    type="submit" 
+                    variant="pink-gradient" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Request'}
                   </Button>
                   
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
                     By submitting this form, you agree to our{' '}
-                    <Link href="#" className="text-purple-600 dark:text-purple-400 hover:underline">
+                    <Link href="/legal/privacy" className="text-purple-600 dark:text-purple-400 hover:underline">
                       Privacy Policy
                     </Link>{' '}
                     and{' '}
-                    <Link href="#" className="text-purple-600 dark:text-purple-400 hover:underline">
+                    <Link href="/legal/terms" className="text-purple-600 dark:text-purple-400 hover:underline">
                       Terms of Service
                     </Link>.
                   </p>

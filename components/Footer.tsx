@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12">
                 <Image 
-                  src="/images/eu-flag.png" 
+                  src="/images/EU-Flag.avif" 
                   alt="EU Flag" 
                   width={48} 
                   height={48} 
@@ -119,18 +119,17 @@ export default function Footer() {
                 <li><Link href="/about#our-story" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Story</Link></li>
                 <li><Link href="/about#our-story" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Vision</Link></li>
                 <li><Link href="/platform/technology" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Our Technology</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Agent Quorum</Link></li>
+                <li><Link href="/platform/agentquorum" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Agent Quorum</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Services</h4>
               <ul className="space-y-2.5">
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Due Diligence Reports</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Financial Assessment</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Market Analysis</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Business Intelligence</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Investment Insights</Link></li>
+                <li><Link href="/solutions/due-diligence" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Due Diligence Reports</Link></li>
+                <li><Link href="/solutions/financial-risk-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Financial Risk Assessment</Link></li>
+                <li><Link href="/solutions/financial-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Financial Assessment</Link></li>
+                <li><Link href="/solutions/compliance" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Compliance Monitoring</Link></li>
               </ul>
             </div>
 

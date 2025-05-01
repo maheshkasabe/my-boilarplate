@@ -11,6 +11,7 @@ A modern, responsive landing page built with Next.js, TailwindCSS, and ShadCN UI
 - 📱 Fully responsive for all device sizes
 - 🎨 Beautiful gradients and modern design
 - 🔍 SEO optimized
+- 📧 Functional contact and request access forms
 
 ## Getting Started
 
@@ -33,6 +34,18 @@ yarn install
 # or
 pnpm install
 ```
+
+### Email Configuration
+
+The contact and request access forms require email credentials to function properly. Follow these steps:
+
+1. Create a `.env.local` file in the root directory
+2. Add the following variables:
+   ```
+   EMAIL_USER=your-gmail@gmail.com
+   EMAIL_PASS=your-app-password
+   ```
+3. For detailed setup instructions, see [ENV_SETUP.md](ENV_SETUP.md)
 
 ### Development
 
@@ -73,6 +86,7 @@ pnpm start
 - `lib/`: Helper functions and utilities
 - `public/`: Static assets
 - `styles/`: Global styles
+- `app/api/`: API routes for form handling
 
 ## Technologies Used
 
@@ -81,6 +95,7 @@ pnpm start
 - [ShadCN UI](https://ui.shadcn.com/)
 - [Radix UI](https://www.radix-ui.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Nodemailer](https://nodemailer.com/) for email functionality
 
 ## License
 

@@ -1,13 +1,9 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function PlatformTechnologyPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
-      <Navbar />
-      
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
@@ -136,12 +132,12 @@ export default function PlatformTechnologyPage() {
           </div>
           
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-8">
-              <div className="h-64 md:h-80 flex flex-col items-center justify-center gap-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 md:p-8">
+              <div className="min-h-64 md:h-auto flex flex-col items-center justify-center gap-4 md:gap-6">
                 {/* User Interface Layer */}
-                <div className="w-full max-w-3xl bg-purple-100 dark:bg-purple-900/30 rounded-lg p-4">
-                  <div className="font-medium text-center mb-1">User Interface Layer</div>
-                  <div className="flex justify-center gap-3 text-sm">
+                <div className="w-full max-w-3xl bg-purple-100 dark:bg-purple-900/30 rounded-lg p-3 md:p-4">
+                  <div className="font-medium text-center mb-1 text-sm md:text-base">User Interface Layer</div>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-xs md:text-sm">
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Web Application</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Dashboards</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Reporting</span>
@@ -149,9 +145,9 @@ export default function PlatformTechnologyPage() {
                 </div>
                 
                 {/* API & Services Layer */}
-                <div className="w-full max-w-3xl bg-pink-100 dark:bg-pink-900/30 rounded-lg p-4">
-                  <div className="font-medium text-center mb-1">API & Services Layer</div>
-                  <div className="flex justify-center gap-3 text-sm">
+                <div className="w-full max-w-3xl bg-pink-100 dark:bg-pink-900/30 rounded-lg p-3 md:p-4">
+                  <div className="font-medium text-center mb-1 text-sm md:text-base">API & Services Layer</div>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-xs md:text-sm">
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">REST APIs</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Microservices</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Event Processing</span>
@@ -159,9 +155,9 @@ export default function PlatformTechnologyPage() {
                 </div>
                 
                 {/* AI & Analytics Layer */}
-                <div className="w-full max-w-3xl bg-blue-100 dark:bg-blue-900/30 rounded-lg p-4">
-                  <div className="font-medium text-center mb-1">AI & Analytics Layer</div>
-                  <div className="flex justify-center gap-3 text-sm">
+                <div className="w-full max-w-3xl bg-blue-100 dark:bg-blue-900/30 rounded-lg p-3 md:p-4">
+                  <div className="font-medium text-center mb-1 text-sm md:text-base">AI & Analytics Layer</div>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-xs md:text-sm">
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">ML Models</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">NLP Engine</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Data Analytics</span>
@@ -169,9 +165,9 @@ export default function PlatformTechnologyPage() {
                 </div>
                 
                 {/* Data & Security Layer */}
-                <div className="w-full max-w-3xl bg-green-100 dark:bg-green-900/30 rounded-lg p-4">
-                  <div className="font-medium text-center mb-1">Data & Security Layer</div>
-                  <div className="flex justify-center gap-3 text-sm">
+                <div className="w-full max-w-3xl bg-green-100 dark:bg-green-900/30 rounded-lg p-3 md:p-4">
+                  <div className="font-medium text-center mb-1 text-sm md:text-base">Data & Security Layer</div>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3 text-xs md:text-sm">
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Databases</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Encryption</span>
                     <span className="px-2 py-1 bg-white/50 dark:bg-black/20 rounded">Authentication</span>
@@ -216,52 +212,53 @@ export default function PlatformTechnologyPage() {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-center">
-              <div className="h-12 mb-4 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 md:p-6 text-center">
+              <div className="h-10 md:h-12 mb-3 md:mb-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-6 md:w-8 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
                   <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
                   <line x1="6" y1="6" x2="6.01" y2="6" />
                   <line x1="6" y1="18" x2="6.01" y2="18" />
                 </svg>
               </div>
-              <h3 className="font-medium">Kubernetes</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Container Orchestration</p>
+              <h3 className="text-sm md:text-base font-medium">Kubernetes</h3>
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-2">Container Orchestration</p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-center">
-              <div className="h-12 mb-4 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 md:p-6 text-center">
+              <div className="h-10 md:h-12 mb-3 md:mb-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-6 md:w-8 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <polyline points="16 18 22 12 16 6" />
                   <polyline points="8 6 2 12 8 18" />
                 </svg>
               </div>
-              <h3 className="font-medium">Next.js</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Frontend Framework</p>
+              <h3 className="text-sm md:text-base font-medium">Next.js</h3>
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-2">Frontend Framework</p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-center">
-              <div className="h-12 mb-4 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 md:p-6 text-center">
+              <div className="h-10 md:h-12 mb-3 md:mb-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-6 md:w-8 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M12 2L2 7l10 5 10-5-10-5z" />
                   <path d="M2 17l10 5 10-5" />
                   <path d="M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <h3 className="font-medium">TensorFlow</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">ML Framework</p>
+              <h3 className="text-sm md:text-base font-medium">TensorFlow</h3>
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-2">AI/ML Framework</p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-center">
-              <div className="h-12 mb-4 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-pink-600 dark:text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M3 3v18h18" />
-                  <path d="M18.4 13.5L8.5 17.8 5.6 6.3" />
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 md:p-6 text-center">
+              <div className="h-10 md:h-12 mb-3 md:mb-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-6 md:w-8 text-yellow-600 dark:text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="9" y1="21" x2="9" y2="9" />
                 </svg>
               </div>
-              <h3 className="font-medium">Elasticsearch</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Search & Analytics</p>
+              <h3 className="text-sm md:text-base font-medium">PostgreSQL</h3>
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-2">Database</p>
             </div>
           </div>
         </div>
@@ -292,8 +289,6 @@ export default function PlatformTechnologyPage() {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </main>
   );
 } 

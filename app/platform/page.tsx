@@ -105,6 +105,41 @@ export default function PlatformPage() {
         </div>
       </section>
       
+      {/* AgentQuorum Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-3xl font-bold">AgentQuorum</h2>
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                COMING SOON
+              </span>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
+              <div className="max-w-3xl">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                  Diligent Insight is powered by Agent Quorum, a multi-agent AI platform.
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  AgentQuorum is a cutting-edge multi-agent AI platform designed to tackle the world's most complex challenges. By combining advanced collaboration, machine learning, and intelligent automation, AgentQuorum empowers businesses and organisations to unlock limitless possibilities.
+                </p>
+                <div className="mt-8">
+                  <Link href="/platform/agentquorum">
+                    <Button variant="outline" size="lg" className="border-purple-500 text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
+                      Learn more about AgentQuorum
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Pricing CTA */}
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
