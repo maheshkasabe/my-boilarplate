@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   title: "Diligent Insight",
   description: "Elevate your workflow with custom AI Agents templates, complemented by dynamic tools and seamless integrations.",
   keywords: ["AI", "AI Agents", "machine learning", "automation", "workflow"],
-  authors: [{ name: "Beam AI Team" }],
+  authors: [{ name: "Diligent Insight Team" }],
   openGraph: {
     title: "Diligent Insight",
     description: "",
-    url: "https://beam.ai",
+    url: "https://diligentinsight.co.uk",
     siteName: "Diligent Insight",
     locale: "en_US",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Diligent Insight",
-    description: "Elevate your workflow with custom AI Agents templates.",
+    description: "Elevate your workflow with custom AI Agents.",
   },
 };
 

@@ -22,11 +22,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/platform/technology', priority: 0.7 },
     { url: '/platform/agent-quorum', priority: 0.7 },
     
-    // Solutions pages
-    { url: '/solutions/due-diligence', priority: 0.8 },
-    { url: '/solutions/financial-risk-assessment', priority: 0.8 },
-    { url: '/solutions/financial-assessment', priority: 0.8 },
-    { url: '/solutions/compliance', priority: 0.8 },
+    // Our Agents pages
+    { url: '/our-agents', priority: 0.8 },
+    { url: '/our-agents/due-diligence', priority: 0.8 },
+    { url: '/our-agents/peer-group-benchmarking', priority: 0.8 },
+    { url: '/our-agents/bank-statement-analysis', priority: 0.8 },
+    { url: '/our-agents/data-extraction', priority: 0.8 },
+    { url: '/our-agents/data-insights', priority: 0.8 },
+    { url: '/our-agents/ip-assessment', priority: 0.8 },
+    
+    // Use Cases pages
+    { url: '/use-cases', priority: 0.8 },
+    { url: '/use-cases/venture-capital-private-equity', priority: 0.8 },
+    { url: '/use-cases/incubators-accelerators', priority: 0.8 },
+    { url: '/use-cases/purchasing', priority: 0.8 },
+    { url: '/use-cases/corporate-due-diligence', priority: 0.8 },
     
     // Legal pages
     { url: '/legal/privacy', priority: 0.4 },

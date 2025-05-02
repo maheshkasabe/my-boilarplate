@@ -12,8 +12,7 @@
 
 # testing
 /coverage
-/todos
-/todos/todo.todos
+/todolist.txt
 
 # next.js
 /.next/
