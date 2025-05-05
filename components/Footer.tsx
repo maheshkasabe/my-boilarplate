@@ -126,22 +126,22 @@ export default function Footer() {
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Our Agents</h4>
               <ul className="space-y-2.5">
-                <li><Link href="/solutions/due-diligence" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Due Diligence</Link></li>
-                <li><Link href="/solutions/financial-risk-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm"> Peer Group Benchmarking</Link></li>
-                <li><Link href="/solutions/financial-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Bank statement analysis</Link></li>
-                <li><Link href="/solutions/compliance" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Data Extraction</Link></li>
-                <li><Link href="/solutions/compliance" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Data Insights</Link></li>
-                <li><Link href="/solutions/compliance" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">IP Assessment</Link></li>
+                <li><Link href="/our-agents/due-diligence" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Due Diligence</Link></li>
+                <li><Link href="/our-agents/peer-group-benchmarking" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm"> Peer Group Benchmarking</Link></li>
+                <li><Link href="/our-agents/bank-statement-analysis" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Bank Statement Analysis</Link></li>
+                <li><Link href="/our-agents/data-extraction" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Data Extraction</Link></li>
+                <li><Link href="/our-agents/data-insights" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Data Insights</Link></li>
+                <li><Link href="/our-agents/ip-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">IP Assessment</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">Use Cases</h4>
               <ul className="space-y-2.5">
-                <li><Link href="/solutions/due-diligence" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Venture Capital & Private Equity</Link></li>
-                <li><Link href="/solutions/financial-risk-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Incubators & Accelerators</Link></li>
-                <li><Link href="/solutions/financial-assessment" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Purchasing</Link></li>
-                <li><Link href="/solutions/compliance" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Corpoorate Due Diligence</Link></li>
+                <li><Link href="/use-cases/venture-capital-private-equity" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Venture Capital & Private Equity</Link></li>
+                <li><Link href="/use-cases/incubators-accelerators" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Incubators & Accelerators</Link></li>
+                <li><Link href="/use-cases/purchasing" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Purchasing</Link></li>
+                <li><Link href="/use-cases/corporate-due-diligence" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo text-sm">Corpoorate Due Diligence</Link></li>
               </ul>
             </div>
 
