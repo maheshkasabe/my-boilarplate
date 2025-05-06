@@ -60,8 +60,8 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12">
                 <Image 
-                  src="/images/EU-Flag.avif" 
-                  alt="EU Flag" 
+                  src="/images/uk-flag.png" 
+                  alt="UK Flag" 
                   width={48} 
                   height={48} 
                   className="rounded-full"
