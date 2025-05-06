@@ -9,7 +9,7 @@ export default function PeerGroupBenchmarkingPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-600 dark:from-pink-400 dark:to-blue-400">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-600 dark:from-pink-400 dark:to-blue-400">
               Peer Group Benchmarking
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">

@@ -76,15 +76,15 @@ export default function Footer() {
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
               </Link>
-              <Link href="#" aria-label="YouTube">
+              {/* <Link href="#" aria-label="YouTube">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo">
                   <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                 </svg>
-              </Link>
+              </Link> */}
             </div>
             
             {/* Newsletter */}
-            <div className="max-w-md w-full">
+            {/* <div className="max-w-md w-full">
               <h3 className="text-base font-aharoni font-normal text-gray-900 dark:text-white mb-3">Subscribe to our newsletter</h3>
               {subscribed ? (
                 <div className="py-2 px-4 bg-brand-lavender/30 dark:bg-brand-magenta/20 text-brand-magenta dark:text-brand-lavender rounded text-sm">
@@ -108,11 +108,11 @@ export default function Footer() {
                   </button>
                 </form>
               )}
-            </div>
+            </div>*/}
           </div>
           
           {/* Site Links */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             <div>
               <h4 className="text-gray-900 dark:text-white font-aharoni font-medium mb-4">About</h4>
               <ul className="space-y-2.5">

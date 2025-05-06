@@ -151,7 +151,7 @@ export default function Navbar() {
                 
                 {/* Hover Card */}
                 <div 
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[90vw] bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-in-out z-50 transform ${
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-[600px] max-w-[90vw] bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-in-out z-50 transform ${
                     activeDropdown === index 
                       ? "opacity-100 translate-y-0 scale-100" 
                       : "opacity-0 translate-y-1 scale-95 pointer-events-none"
@@ -228,7 +228,8 @@ export default function Navbar() {
                 Log in
               </Button>
             </Link>
-            <Link href="/request-access">
+            {/* <Link href="/request-access"> */}
+            <Link href="https://di-main.fly.dev/login">
               <Button 
                 variant="brand-gradient" 
                 size="sm" 

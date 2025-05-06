@@ -1,18 +1,15 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function OurAgentsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
-      <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
               Our Agents
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
@@ -210,7 +207,6 @@ export default function OurAgentsPage() {
         </div>
       </section>
       
-      <Footer />
     </main>
   );
 } 

@@ -9,7 +9,7 @@ export default function BankStatementAnalysisPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-600 dark:from-green-400 dark:to-blue-400">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-600 dark:from-green-400 dark:to-blue-400">
               Bank Statement Analysis
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
@@ -99,7 +99,7 @@ export default function BankStatementAnalysisPage() {
                               </svg>
                             </div>
                             <p className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                              Bank Statement Visualization
+                              Bank Statement Visualisation
                             </p>
                             <p className="text-sm text-gray-600 dark:text-gray-400">
                               Get visual insights from transaction data
