@@ -223,7 +223,8 @@ export default function Navbar() {
 
           {/* Login & Request Access */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link href="/login">
+            {/* <Link href="/login"> */}
+            <Link href="https://di-main.fly.dev/login">
               <Button variant="outline" size="sm" className="rounded-md text-sm px-4 py-1.5 h-auto border border-gray-300 dark:border-gray-700 font-medium bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-none hover:shadow-none font-aharoni">
                 Log in
               </Button>
@@ -311,7 +312,8 @@ export default function Navbar() {
               </div>
             ))}
             <div className="pt-4 space-y-2">
-              <Link href="/login">
+              <Link href="https://di-main.fly.dev/login">
+              {/* <Link href="/login"> */}
                 <Button 
                   variant="outline" 
                   className="w-full rounded-md text-sm px-4 py-1.5 h-auto border border-gray-300 dark:border-gray-700 font-medium bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-none hover:shadow-none font-aharoni"
