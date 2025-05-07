@@ -113,18 +113,18 @@ export default function Navbar() {
                 <Image 
                   src="/images/DI-logo-dark.png" 
                   alt="Diligent Insight Logo" 
-                  width={180} 
-                  height={40} 
-                  className="h-9 md:h-10 w-auto"
+                  width={140} 
+                  height={32} 
+                  className="h-6 md:h-7 w-auto"
                   priority
                 />
               ) : (
                 <Image 
                   src="/images/DI-logo.png" 
                   alt="Diligent Insight Logo" 
-                  width={140} 
-                  height={25} 
-                  className="h-7 md:h-8 w-auto"
+                  width={120} 
+                  height={28} 
+                  className="h-6 md:h-7 w-auto"
                   priority
                 />
               )}

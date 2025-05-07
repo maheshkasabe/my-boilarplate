@@ -36,18 +36,18 @@ export default function Footer() {
                 <Image 
                   src="/images/DI-logo-dark.png" 
                   alt="Diligent Insight Logo" 
-                  width={200} 
-                  height={45} 
-                  className="h-10 md:h-11 w-auto"
+                  width={140} 
+                  height={31} 
+                  className="h-7 md:h-8 w-auto"
                   priority
                 />
               ) : (
                 <Image 
                   src="/images/DI-logo.png" 
                   alt="Diligent Insight Logo" 
-                  width={160} 
-                  height={30} 
-                  className="h-8 md:h-9 w-auto"
+                  width={120} 
+                  height={25} 
+                  className="h-6 md:h-7 w-auto"
                   priority
                 />
               )}
@@ -71,7 +71,7 @@ export default function Footer() {
             
             {/* Social Media */}
             <div className="flex items-center space-x-4">
-              <Link href="https://www.linkedin.com/company/diligent-insight" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/company/diligentinsights" aria-label="LinkedIn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-gray-600 hover:text-brand-magenta dark:text-gray-400 dark:hover:text-brand-indigo">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
