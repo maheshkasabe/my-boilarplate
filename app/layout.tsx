@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Diligent Insight",
+  title: "Diligent Insights",
   description: "Elevate your workflow with custom AI Agents templates, complemented by dynamic tools and seamless integrations.",
   keywords: ["AI", "AI Agents", "machine learning", "automation", "workflow"],
   authors: [{ name: "Diligent Insight Team" }],

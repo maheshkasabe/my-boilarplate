@@ -184,7 +184,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="pt-8 mt-8 border-t border-gray-200 dark:border-gray-800 flex justify-between items-center">
-            <p className="text-sm text-gray-500 dark:text-gray-500">© 2025 Diligent Insight Ltd. | Registered in Scotland, SC816340</p>
+            <p className="text-sm text-gray-500 dark:text-gray-500">© 2025 Diligent Insights Ltd. | Registered in Scotland, SC816340</p>
             <div className="flex items-center space-x-2">
               <span className={`text-sm ${theme === 'light' ? 'text-gray-900' : 'text-gray-600'}`}>Light</span>
               <button 
